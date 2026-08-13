@@ -3,8 +3,34 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission
+        android:name="android.permission.INTERNET"/>
+
     <application
         android:label="InfoCD Print Service">
+
+        <activity
+            android:name=".PrintActivity"
+            android:exported="true">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.VIEW"/>
+
+                <category
+                    android:name="android.intent.category.DEFAULT"/>
+
+                <category
+                    android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:scheme="icdprint"
+                    android:host="print"/>
+
+            </intent-filter>
+
+        </activity>
 
         <activity
             android:name=".MainActivity"
